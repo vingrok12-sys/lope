@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kagem Ingkang Terkasih ❤️</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body { 
+            height: 100vh;
+            display: flex;
+            font-family: 'Georgia', serif; /* Font lebih klasik */
+            background-color: #1a3a3a; /* Hijau Pari Anom Tua */
+            overflow: hidden;
+        }
+
+        /* BAGIAN KIRI: Foto dengan Frame Emas */
+        .photo-side {
+            flex: 1;
+            background-image: url('fotoayang2.jpeg'); /* GANTI NAMA FILE */
+            background-size: cover;
+            background-position: center;
+            border-right: 8px solid #d4af37; /* Border Emas Mangkunegaran */
+            position: relative;
+        }
+
+        /* Ornamen Pojok Klasik */
+        .photo-side::after {
+            content: "⚜️";
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: #d4af37;
+        }
+
+        /* BAGIAN KANAN: Konten nuansa Keraton */
+        .content-side {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            background: radial-gradient(circle, #2d5a27 0%, #1a3a3a 100%); /* Gradasi Hijau Pari Anom */
+            color: #d4af37; /* Teks Warna Emas */
+        }
+
+        .container {
+            text-align: center;
+            max-width: 400px;
+            border: 2px solid #d4af37;
+            padding: 40px 20px;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        h1 { 
+            font-size: 20px; 
+            letter-spacing: 4px; 
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        
+        .sub-title { font-size: 12px; margin-bottom: 20px; font-style: italic; color: #fff; }
+
+        #counter {
+            font-size: 80px;
+            font-weight: bold;
+            line-height: 1;
+            margin: 10px 0;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .days-label { 
+            font-size: 14px; 
+            text-transform: uppercase; 
+            letter-spacing: 5px; 
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        #pesan { 
+            min-height: 90px; 
+            font-size: 18px; 
+            color: #fff; 
+            line-height: 1.6;
+            margin-bottom: 30px;
+            padding: 0 10px;
+        }
+
+        button { 
+            background: #d4af37; /* Tombol Emas */
+            color: #1a3a3a; 
+            border: none; 
+            padding: 12px 35px; 
+            border-radius: 2px; /* Lebih kotak agar formal */
+            cursor: pointer; 
+            font-weight: bold;
+            font-family: 'serif';
+            text-transform: uppercase;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        button:hover { background: #f1d37c; transform: scale(1.05); }
+
+        @media (max-width: 768px) {
+            body { flex-direction: column; }
+            .photo-side { height: 45vh; border-right: none; border-bottom: 5px solid #d4af37; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="photo-side"></div>
+
+    <div class="content-side">
+        <div class="container">
+            <h1>Lelampahan Tresna</h1> <p class="sub-title">Wiwit nunggil karsa...</p>
+            
+            <div id="counter">0</div>
+            <p class="days-label">Dinten Sesarengan</p>
+            
+            <div id="pesan">"Klik ing ngandhap kagem pesen spesial..."</div>
+            
+            <button onclick="gantiPesan()">Ganti Pesen</button>
+        </div>
+    </div>
+
+    <script>
+        // TANGGAL JADIAN (YYYY-MM-DD)
+        const tanggalJadian = "2022-09-28"; 
+
+        function hitungHari() {
+            const mulai = new Date(tanggalJadian);
+            const sekarang = new Date();
+            const selisihWaktu = sekarang - mulai;
+            const selisihHari = Math.floor(selisihWaktu / (1000 * 60 * 60 * 24));
+            document.getElementById("counter").innerText = selisihHari;
+        }
+
+        hitungHari();
+
+        const daftarPesan = [
+            "Semangat nggih sayangku hari ini!",
+            "Maturnuwun sampun sabar kaliyan kula.",
+            "Sampun lali dahar nggih, cah ayu.",
+            "I'm so proud of you, nimas.",
+            "Tresnaku dhumateng panjenengan mboten badhe luntur.",
+            "Kamu itu seperti melati di taman Mangkunegaran, cantik dan teduh.",
+            "Sampun lali slebew!!",
+            "Mugi Gusti paring berkah kagem hubungan kita."
+        ];
+
+        function gantiPesan() {
+            const index = Math.floor(Math.random() * daftarPesan.length);
+            document.getElementById("pesan").innerHTML = "\"" + daftarPesan[index] + "\"";
+        }
+    </script>
+</body>
+</html>
