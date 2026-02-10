@@ -3,111 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kagem Ingkang Terkasih ❤️</title>
+    <title>Special for You ❤️</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body { 
             height: 100vh;
             display: flex;
-            font-family: 'Georgia', serif; /* Font lebih klasik */
-            background-color: #1a3a3a; /* Hijau Pari Anom Tua */
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #fff0f3; /* Warna dasar feminin */
             overflow: hidden;
         }
 
-        /* BAGIAN KIRI: Foto dengan Frame Emas */
+        /* BAGIAN KIRI: Foto Utuh & Tajam */
         .photo-side {
             flex: 1;
             background-image: url('fotoayang2.jpeg'); /* GANTI NAMA FILE */
             background-size: cover;
             background-position: center;
-            border-right: 8px solid #d4af37; /* Border Emas Mangkunegaran */
-            position: relative;
+            border-right: 5px solid white;
         }
 
-        /* Ornamen Pojok Klasik */
-        .photo-side::after {
-            content: "⚜️";
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            font-size: 30px;
-            color: #d4af37;
-        }
-
-        /* BAGIAN KANAN: Konten nuansa Keraton */
+        /* BAGIAN KANAN: Pesan & Counter */
         .content-side {
             flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 40px;
-            background: radial-gradient(circle, #2d5a27 0%, #1a3a3a 100%); /* Gradasi Hijau Pari Anom */
-            color: #d4af37; /* Teks Warna Emas */
+            background: linear-gradient(135deg, #fff0f3 0%, #ffffff 100%);
         }
 
         .container {
             text-align: center;
             max-width: 400px;
-            border: 2px solid #d4af37;
-            padding: 40px 20px;
-            border-radius: 10px;
-            background: rgba(0, 0, 0, 0.2);
         }
 
-        h1 { 
-            font-size: 20px; 
-            letter-spacing: 4px; 
-            text-transform: uppercase;
-            margin-bottom: 5px;
-        }
+        h1 { color: #ff4d6d; font-size: 24px; letter-spacing: 1px; }
         
-        .sub-title { font-size: 12px; margin-bottom: 20px; font-style: italic; color: #fff; }
-
         #counter {
             font-size: 80px;
-            font-weight: bold;
+            font-weight: 900;
+            color: #ff4d6d;
             line-height: 1;
             margin: 10px 0;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
         }
 
         .days-label { 
             font-size: 14px; 
             text-transform: uppercase; 
-            letter-spacing: 5px; 
-            color: #fff;
+            letter-spacing: 3px; 
+            color: #888;
             margin-bottom: 30px;
         }
 
         #pesan { 
-            min-height: 90px; 
+            min-height: 80px; 
             font-size: 18px; 
-            color: #fff; 
+            color: #444; 
             line-height: 1.6;
             margin-bottom: 30px;
-            padding: 0 10px;
+            font-style: italic;
         }
 
         button { 
-            background: #d4af37; /* Tombol Emas */
-            color: #1a3a3a; 
+            background: #ff4d6d;
+            color: white; 
             border: none; 
-            padding: 12px 35px; 
-            border-radius: 2px; /* Lebih kotak agar formal */
+            padding: 15px 40px; 
+            border-radius: 50px; 
             cursor: pointer; 
             font-weight: bold;
-            font-family: 'serif';
-            text-transform: uppercase;
             transition: 0.3s;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.3);
         }
 
-        button:hover { background: #f1d37c; transform: scale(1.05); }
+        button:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(255, 77, 109, 0.5); }
 
+        /* Responsive buat HP biar ga aneh */
         @media (max-width: 768px) {
             body { flex-direction: column; }
-            .photo-side { height: 45vh; border-right: none; border-bottom: 5px solid #d4af37; }
+            .photo-side { height: 40vh; border-right: none; border-bottom: 5px solid white; }
         }
     </style>
 </head>
@@ -117,14 +93,13 @@
 
     <div class="content-side">
         <div class="container">
-            <h1>Lelampahan Tresna</h1> <p class="sub-title">Wiwit nunggil karsa...</p>
-            
+            <h1>OUR JOURNEY</h1>
             <div id="counter">0</div>
-            <p class="days-label">Dinten Sesarengan</p>
+            <p class="days-label">Days Together</p>
             
-            <div id="pesan">"Klik ing ngandhap kagem pesen spesial..."</div>
+            <div id="pesan">"Klik tombol di bawah untuk kejutan..."</div>
             
-            <button onclick="gantiPesan()">Ganti Pesen</button>
+            <button onclick="gantiPesan()">Ganti Pesan</button>
         </div>
     </div>
 
@@ -143,14 +118,14 @@
         hitungHari();
 
         const daftarPesan = [
-            "Semangat nggih sayangku hari ini!",
-            "Maturnuwun sampun sabar kaliyan kula.",
-            "Sampun lali dahar nggih, cah ayu.",
-            "I'm so proud of you, nimas.",
-            "Tresnaku dhumateng panjenengan mboten badhe luntur.",
-            "Kamu itu seperti melati di taman Mangkunegaran, cantik dan teduh.",
-            "Sampun lali slebew!!",
-            "Mugi Gusti paring berkah kagem hubungan kita."
+            "Semangat ya hari ini cantik!",
+            "Makasih ya udah bertahan sejauh ini.",
+            "I'm so proud of you, baby.",
+            "Setiap hari sama kamu itu favorit aku.",
+            "Jangan lupa slebew!!",
+            "Hi cantik.",
+            "I love you poll",
+            "Stay healthy ya, sayang."
         ];
 
         function gantiPesan() {
